@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>HomeWater Application</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body>
+<h1>Data Depot</h1>
+
+<p><a href="/depot/new">Add new deposit</a></p>
+<?php
+if(count($depot) > 0):
+?>
+<table class="pure-table">
+    <tr>
+        
+        <th>ID</th>
+        <th>Lonlat</th>
+        <th>Owner</th>
+		<th>Install Date</th>
+		<th>Saldo</th>
+		<th>Aksi</th>
+    </tr>
+
+<?php
+    $odd = true;
+    foreach($depot as $depot): ?>
+
+        <tr <?=$odd ? "class=\"pure-table-odd\"" : ""; ?>>
+        <td><?=$depot->getID() ?></td>
+		<td><?=$depot->getLonlat() ?></td>
+        <td><?=$depot->getOwner() ?></td>
+        <td><?=$depot->getInstall_date() ?></td>
+		<td><?=$depot->getSaldo() ?></td>
+		<td>
+            <a href="<?=$router->pathFor('depot-update', ['id' => $depot->getId()])?>">Update</a>
+			<a href="/depot/<?=$depot->getId()?>/delete">Delete</a>
+        </td>
+       
+    </tr>
+
+<?php 
+    $odd = $odd ? false : true;
+    endforeach; ?>
+</table>
+<?php else: ?>
+<p>No current depot</p>
+<?php endif; ?>
+<?php require 'footer.phtml' ?>
+</body>
+</html>
+

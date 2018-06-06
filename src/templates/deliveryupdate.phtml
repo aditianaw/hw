@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>HomeWater Apllication</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body>
+<h1>Update Delivery</h1>
+
+<form class="pure-form" method="get" action="/delivery/<?=$delivery->getId()?>/updat">
+	 <label for="nilai">Nilai Delivery</label>
+     <input name="nilai" id="nilai" type="text" size="60"  value="<?=$delivery->getNilai()?>"/><br />
+     <input type="submit" class="pure-button" value="Update" />
+</form>
+<?php require 'footer.phtml' ?>
+</body>
+</html>
+
+

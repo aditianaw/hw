@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>HomeWater Application</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body>
+<h1>Data Delivery</h1>
+
+<p><a href="/delivery/new">Add new delivery</a></p>
+<?php
+if(count($delivery) > 0):
+?>
+<table class="pure-table">
+    <tr>
+        <th>ID</th>
+		<th>ID Depot</th>
+		<th>Nilai Delivery</th>
+        <th>Waktu</th>
+		<th>Aksi</th>
+    </tr>
+
+<?php
+    $odd = true;
+    foreach($delivery as $delivery): ?>
+
+    <tr <?=$odd ? "class=\"pure-table-odd\"" : ""; ?>>
+        <td><?=$delivery->getID() ?></td>
+		<td><?=$delivery->getDepot_id() ?></td>
+		<td><?=$delivery->getNilai() ?></td>
+		<td><?=$delivery->getWaktu() ?></td>
+		<td>
+			<a href="<?=$router->pathFor('delivery-update', ['id' => $delivery->getId()])?>">Update</a>
+			<a href="/delivery/<?=$delivery->getId()?>/delete">Delete</a>
+        </td>
+    </tr>
+
+<?php 
+    $odd = $odd ? false : true;
+    endforeach; ?>
+</table>
+<?php else: ?>
+<p>No current tickets</p>
+<?php endif; ?>
+<?php require 'footer.phtml' ?>
+</body>
+</html>
+

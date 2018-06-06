@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>HomeWater Application</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body>
+<h1>Update Deposit</h1>
+
+<form class="pure-form" method="get" action="/deposit/<?=$deposit->getId()?>/updat">
+	 <label for="depot_id">Id Depot</label>
+     <input name="depot_id" id="depot_id" type="text" size="60"  value="<?=$deposit->getDepot_id()?>"/><br />
+	 <label for="nilai_deposit">Nilai Deposit</label>
+     <input name="nilai_deposit" id="nilai_deposit" type="text" size="60"  value="<?=$deposit->getNilai_deposit()?>"/><br />
+    <input type="submit" class="pure-button" value="Update" />
+</form>
+<?php require 'footer.phtml' ?>
+</body>
+</html>
+
+

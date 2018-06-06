@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Homewater Application</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body>
+<h1>New Deposit</h1>
+<form class="pure-form" method="post" action="/deposit/new">
+	<label for="depot_id">ID Depot</label>
+    <textarea name="depot_id" id="depot_id" type="text" size="60"></textarea><br />
+	<label for="nilai_deposit">Nilai</label>
+    <textarea name="nilai_deposit" id="nilai_deposit" type="text" size="60" ></textarea><br />
+    <input type="submit" class="pure-button" value="Create" />
+</form>
+<?php require 'footer.phtml' ?>
+</body>
+</html>
+
+

@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>HomeWater Application</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body>
+<h1>Update Depot</h1>
+
+<form class="pure-form" method="get" action="/depot/<?=$depot->getId()?>/updat">
+    <label for="lonlat">Lonlat</label>
+    <input name="lonlat" id="lonlat" type="text" size="60"  value="<?=$depot->getLonlat()?>"/><br />
+	<label for="owner">Owner</label>
+    <input name="owner" id="owner" type="text" size="60"  value="<?=$depot->getOwner()?>"/><br />
+	<label for="install_date">Install Date</label>
+    <input name="install_date" id="install_date" type="date" size="60"  value="<?=$depot->getInstall_date()?>"/><br />
+	<label for="saldo">Saldo</label>
+    <input name="saldo" id="saldo" type="text" size="60"  value="<?=$depot->getSaldo()?>"/><br />
+    <input type="submit" class="pure-button" value="Update" />
+</form>
+<?php require 'footer.phtml' ?>
+</body>
+</html>
+
+
